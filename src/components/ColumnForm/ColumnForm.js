@@ -3,26 +3,26 @@ import { useState } from 'react';
 import Button from '../Button/Button.js';
 import TextInput from '../TextInput/TextInput.js';
 
-const ColumnForm = (props) => {
+const ColumnForm = ({ action }) => {
   const [title, setTitle] = useState('');
   const [icon, setIcon] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    props.action({ title: title, icon: icon });
+    action({ title: title, icon: icon });
     setTitle('');
     setIcon('');
   };
 
   return (
     <form className={styles.columnForm} onSubmit={handleSubmit}>
-      <label for='title'>Title: </label>
+      <label forHtml='title'>Title: </label>
       <TextInput
         name='title'
         value={title}
         onChange={(e) => setTitle(e.target.value)}
       />
-      <label for='icon'>Icon: </label>
+      <label forHtml='icon'>Icon: </label>
       <TextInput
         name='icon'
         value={icon}
