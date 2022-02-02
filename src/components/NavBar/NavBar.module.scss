@@ -1,0 +1,25 @@
+@import '../../styles/settings.scss';
+
+nav {
+  background: darken($color-dark, 3%);
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 700;
+  margin-right: 16px;
+}
+
+i {
+  font-size: 24px;
+  margin-top: 15px;
+}
