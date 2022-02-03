@@ -4,22 +4,39 @@ nav {
   background: darken($color-dark, 3%);
 }
 
-.container {
+nav .container {
   display: flex;
   justify-content: space-between;
   max-width: 1200px;
   margin: 0 auto;
 }
 
-a {
+nav a {
   color: #fff;
   text-decoration: none;
+
+  font-size: 16px;
+  font-weight: 700;
+  margin-right: 16px;
+}
+nav ul {
+  display: flex;
+  justify-content: space-between;
+}
+
+nav li {
+  color: #fff;
+  list-style-type: none;
   font-size: 16px;
   font-weight: 700;
   margin-right: 16px;
 }
 
-i {
+nav i {
   font-size: 24px;
   margin-top: 15px;
+}
+
+nav .linkActive {
+  color: $color-warning;
 }
