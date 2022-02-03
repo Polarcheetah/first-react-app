@@ -2,8 +2,9 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { addList } from '../../redux/store';
 import Button from '../Button/Button';
+import Form from '../Form/Form';
+import FormLabel from '../FormLabel/FormLabel';
 import TextInput from '../TextInput/TextInput';
-import styles from './ListForm.module.scss';
 
 const ListForm = () => {
   const dispatch = useDispatch();
@@ -19,21 +20,21 @@ const ListForm = () => {
   };
 
   return (
-    <form className={styles.listForm} onSubmit={handleSubmit}>
-      <label forhtml='title'>Title: </label>
+    <Form onSubmit={handleSubmit}>
+      <FormLabel forhtml='title'>Title: </FormLabel>
       <TextInput
         name='title'
         value={title}
         onChange={(e) => setTitle(e.target.value)}
       />
-      <label forhtml='description'>Description: </label>
+      <FormLabel forhtml='description'>Description: </FormLabel>
       <TextInput
         name='description'
         value={description}
         onChange={(e) => setDescription(e.target.value)}
       />
       <Button>Add List</Button>
-    </form>
+    </Form>
   );
 };
 

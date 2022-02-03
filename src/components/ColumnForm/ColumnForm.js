@@ -1,9 +1,10 @@
-import styles from './ColumnForm.module.scss';
 import { useState } from 'react';
 import Button from '../Button/Button.js';
 import TextInput from '../TextInput/TextInput.js';
 import { useDispatch } from 'react-redux';
 import { addColumn } from '../../redux/store.js';
+import FormLabel from '../FormLabel/FormLabel';
+import Form from '../Form/Form';
 
 const ColumnForm = ({ listId }) => {
   const dispatch = useDispatch();
@@ -19,21 +20,21 @@ const ColumnForm = ({ listId }) => {
   };
 
   return (
-    <form className={styles.columnForm} onSubmit={handleSubmit}>
-      <label forhtml='title'>Title: </label>
+    <Form onSubmit={handleSubmit}>
+      <FormLabel>Title: </FormLabel>
       <TextInput
         name='title'
         value={title}
         onChange={(e) => setTitle(e.target.value)}
       />
-      <label forhtml='icon'>Icon: </label>
+      <FormLabel>Icon: </FormLabel>
       <TextInput
         name='icon'
         value={icon}
         onChange={(e) => setIcon(e.target.value)}
       />
       <Button>Add column</Button>
-    </form>
+    </Form>
   );
 };
 

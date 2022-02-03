@@ -1,20 +1,13 @@
 @import '../../styles/settings.scss';
 
-.columnForm {
+.form {
   display: flex;
   justify-content: center;
   padding: 10px;
 }
 
-label {
-  margin: 15px 10px 10px 20px;
-}
-
 @media (max-width: 767px) {
   .columnForm {
     flex-direction: column;
-  }
-  label {
-    margin: 15px 0;
   }
 }
