@@ -11,3 +11,13 @@
   justify-content: space-between;
   font-weight: bold;
 }
+
+.card button {
+  border: none;
+  background: none;
+  font-weight: 700;
+}
+
+.card .isFavorite {
+  color: $color-warning;
+}
