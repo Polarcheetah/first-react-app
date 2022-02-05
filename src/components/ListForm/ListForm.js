@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { addList } from '../../redux/store';
+import { addList } from '../../redux/listsRedux';
+
 import Button from '../Button/Button';
 import Form from '../Form/Form';
 import FormLabel from '../FormLabel/FormLabel';

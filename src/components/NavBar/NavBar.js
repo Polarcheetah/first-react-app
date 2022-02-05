@@ -1,13 +1,13 @@
 import styles from './NavBar.module.scss';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 const NavBar = () => {
   return (
     <nav className={styles.nav}>
       <div className={styles.container}>
-        <a href='/'>
+        <Link to='/'>
           <i className='fa fa-tasks'></i>
-        </a>
+        </Link>
         <ul>
           <li>
             <NavLink

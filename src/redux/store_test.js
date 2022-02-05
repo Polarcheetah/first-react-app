@@ -22,38 +22,56 @@ export const updateSearchString = (payload) => ({
   payload,
 });
 
-const cardsReducer = (state = [], action) => {
+const cardsReducer = (statePart = [], action) => {
   switch (action.type) {
     case 'ADD_CARD':
-      return [...state, { id: shortid(), ...action.payload }];
+      return [...statePart, { id: shortid(), ...action.payload }];
+    case 'TOGGLE_CARD_FAVORITE':
+      return statePart.cards.map((card) =>
+        card.id === action.payload
+          ? { ...card, isFavorite: !card.isFavorite }
+          : card
+      );
     default:
-      return state;
+      return statePart;
   }
 };
 
-const columnsReducer = (state = [], action) => {
+const columnsReducer = (statePart = [], action) => {
   switch (action.type) {
     case 'ADD_COLUMN':
-      return [...state, { id: shortid(), ...action.payload }];
+      return [...statePart, { id: shortid(), ...action.payload }];
     default:
-      return state;
+      return statePart;
   }
 };
 
-const stringReducer = (state = '', action) => {
+const listsReducer = (statePart = [], action) => {
+  switch (action.type) {
+    case 'ADD_LIST':
+      return [...statePart, { id: shortid, ...action.payload }];
+    default:
+      return statePart;
+  }
+};
+
+const stringReducer = (statePart = '', action) => {
   switch (action.type) {
     case 'UPDATE_SEARCHSTRING':
       return action.payload;
     default:
-      return state;
+      return statePart;
   }
 };
 
-const reducer = combineReducers({
+const subreducers = {
+  lists: listsReducer,
   cards: cardsReducer,
   columns: columnsReducer,
   searchString: stringReducer,
-});
+};
+
+const reducer = combineReducers(subreducers);
 
 const store = createStore(
   reducer,
