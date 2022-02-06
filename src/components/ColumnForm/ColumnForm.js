@@ -27,6 +27,7 @@ const ColumnForm = ({ listId }) => {
         name='title'
         value={title}
         onChange={(e) => setTitle(e.target.value)}
+        placeholder='enter column title'
       />
       <FormLabel>Icon: </FormLabel>
       <TextInput
@@ -34,7 +35,7 @@ const ColumnForm = ({ listId }) => {
         value={icon}
         onChange={(e) => setIcon(e.target.value)}
       />
-      <Button>Add column</Button>
+      <Button disable={title === ''}>Add column</Button>
     </Form>
   );
 };

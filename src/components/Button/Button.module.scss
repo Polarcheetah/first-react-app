@@ -34,3 +34,8 @@
     }
   }
 }
+
+.button[disabled] {
+  background: grey;
+  cursor: not-allowed;
+}

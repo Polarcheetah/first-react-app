@@ -27,6 +27,7 @@ const ListForm = () => {
         name='title'
         value={title}
         onChange={(e) => setTitle(e.target.value)}
+        placeholder='enter list title'
       />
       <FormLabel forhtml='description'>Description: </FormLabel>
       <TextInput
@@ -34,7 +35,7 @@ const ListForm = () => {
         value={description}
         onChange={(e) => setDescription(e.target.value)}
       />
-      <Button>Add List</Button>
+      <Button disable={title === ''}>Add List</Button>
     </Form>
   );
 };

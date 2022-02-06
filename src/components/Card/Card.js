@@ -14,7 +14,6 @@ const Card = ({ cardName, cardId, isFavorite }) => {
 
   const handleDelete = (e) => {
     e.preventDefault();
-    console.log('dupa dupa');
     dispatch(deleteCard(cardId));
   };
 
@@ -29,7 +28,7 @@ const Card = ({ cardName, cardId, isFavorite }) => {
           <span className='fa fa-star-o' />
         </button>
         <button onClick={handleDelete}>
-          <span className={'fa fa-trash'}></span>
+          <span className='fa fa-trash'></span>
         </button>
       </div>
     </li>
